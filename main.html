@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid Xtra</title>
+    <link rel="stylesheet" href="main-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Encabezado de la página -->
+    <header>
+        <h1>Real Madrid Noticias</h1>
+    </header>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <ul>
+            <li><a href="http://127.0.0.1:5500/main.html">Inicio</a></li>
+            <li><a href="http://127.0.0.1:5500/noticias.html">Noticias</a></li>
+            <li><a href="http://127.0.0.1:5500/plantilla.html">Plantilla</a></li>
+            <li><a href="http://127.0.0.1:5500/historia.html">Historia</a></li>
+            <li><a href="http://127.0.0.1:5500/index.html">Cerrar Secion</a></li>
+        </ul>
+
+        <!-- Formulario de búsqueda -->
+        <form>
+            <input type="search" name="q" placeholder="Buscar">
+            <button type="submit">Buscar</button>
+        </form>
+    </nav>
+
+    <!-- Contenido principal -->
+    <main>
+        <!-- Sección sobre noticias recientes del Real Madrid -->
+        <article>
+            <h2>Últimas Noticias del Real Madrid</h2>
+
+            <p>El Real Madrid sigue siendo un referente en el fútbol mundial. En la actualidad, el equipo se prepara para afrontar nuevos retos en la temporada, con una plantilla renovada y grandes aspiraciones tanto en la liga local como en las competiciones europeas.</p>
+            
+            <p>En los últimos partidos, el rendimiento del equipo ha sido excepcional, destacando la actuación de sus jóvenes promesas y la experiencia de sus veteranos. El entrenador ha enfatizado la importancia de la cohesión del grupo y la estrategia para superar a los rivales más duros.</p>
+
+            <!-- Contenedor para las imágenes -->
+            <div class="image-container">
+                <!-- Imagen del estadio Santiago Bernabéu -->
+                <img src="Estadio.jpeg" alt="Estadio Santiago Bernabéu">
+                <div class="explosion"></div> <!-- Elemento de explosión -->
+                
+            </div>
+
+            <h3>Último Partido</h3>
+            <iframe width="890" height="499" src="https://www.youtube.com/embed/4hhnbWi7NRw" title="Real Madrid vs Atletico 6-3 - All Goals &amp; Highlights - 2024" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        <!-- Sección de enlaces relacionados -->
+        <aside>
+            <h2>Próximos Partidos</h2>
+
+            <ul>
+                <li>Real Madrid vs Barcelona - 10 de Septiembre</li>
+                <li>Real Madrid vs Atlético de Madrid - 15 de Septiembre</li>
+            </ul>
+        </aside>
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© Derechos de autor 2024 por Real Madrid Fans, Todos los derechos reservados</p>
+    </footer>
+
+    <!-- JavaScript para manejar las explosiones -->
+    <script>
+        // JavaScript para manejar las explosiones
+        document.querySelectorAll('.image-container img').forEach((img, index) => {
+            img.addEventListener('mouseover', function() {
+                var explosion = this.nextElementSibling;
+                explosion.classList.add('animate');
+                explosion.style.left = (img.offsetLeft + img.clientWidth / 2 - 50) + 'px';
+                explosion.style.top = (img.offsetTop + img.clientHeight / 2 - 50) + 'px';
+                explosion.addEventListener('animationend', () => {
+                    explosion.classList.remove('animate');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
